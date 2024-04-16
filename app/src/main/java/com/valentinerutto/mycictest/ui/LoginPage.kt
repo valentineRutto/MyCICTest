@@ -60,8 +60,7 @@ fun LoginPage() {
                 onClick = {
                     vm.postUser(
                         UserPostData(
-                            username = username.value.text,
-                            password = password.value.text
+                            username = username.value.text, password = password.value.text
                         )
                     )
                 },

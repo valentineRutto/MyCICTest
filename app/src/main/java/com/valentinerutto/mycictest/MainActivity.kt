@@ -10,7 +10,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.valentinerutto.mycictest.data.remote.UserPostData
 import com.valentinerutto.mycictest.ui.LoginPage
 import com.valentinerutto.mycictest.ui.LoginScreen
 import com.valentinerutto.mycictest.ui.LoginViewmodel
@@ -25,11 +24,10 @@ class MainActivity : ComponentActivity() {
             MyCICTestTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
                 ) {
-                   LoginPage()
-                     LoginScreen(uiState = vm.state.value)
+                    LoginPage()
+                    LoginScreen(uiState = viewmodel.state.value)
 
                 }
             }
@@ -40,8 +38,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name!",
-        modifier = modifier
+        text = "Hello $name!", modifier = modifier
     )
 }
 
