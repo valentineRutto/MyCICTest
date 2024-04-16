@@ -8,6 +8,7 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
 
@@ -18,7 +19,7 @@ object RetrofitClient {
         val converterFactory = Json.asConverterFactory(contentType)
 
         return Retrofit.Builder().baseUrl(baseUrl).client(okHttpClient)
-            .addConverterFactory(converterFactory).build()
+            .addConverterFactory(GsonConverterFactory.create()).build()
     }
 
     fun createOkClient(): OkHttpClient {

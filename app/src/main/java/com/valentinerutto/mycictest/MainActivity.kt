@@ -11,6 +11,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.valentinerutto.mycictest.data.remote.UserPostData
+import com.valentinerutto.mycictest.ui.LoginPage
+import com.valentinerutto.mycictest.ui.LoginScreen
 import com.valentinerutto.mycictest.ui.LoginViewmodel
 import com.valentinerutto.mycictest.ui.theme.MyCICTestTheme
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -26,10 +28,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
-                    val us = UserPostData(username = "kminchelle", password = "0lelplR")
-                    viewmodel.postUser(us)
-
+                   LoginPage()
+                     LoginScreen(uiState = vm.state.value)
 
                 }
             }
